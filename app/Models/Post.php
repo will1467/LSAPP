@@ -10,11 +10,15 @@ class Post extends Model
     use HasFactory;
 
     //Table Name
-    //protected $table = 'posts';
+    protected $table = 'posts';
 
     //Primary Key
-    //public $primaryKey = 'item_id';
+    public $primaryKey = 'id';
 
     //Timestamps
-    //public $timestamps = true;
+    public $timestamps = true;
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }
